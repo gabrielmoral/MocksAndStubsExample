@@ -6,15 +6,11 @@ public class Publisher {
 	public TwitterPublisher twitterPublisher;
 	
 	
-	public boolean Publish(Article article, User user) {	
+	public void Publish(Article article, User user) {	
 		if(userRepository.isPublisher(user)){		
 			articleRepository.Publish(article);
-			twitterPublisher.PublishTweet(article.ConvertTweet());
-			
-			return true;
+			twitterPublisher.PublishTweet(article);
 		}
-		
-		return false;
 	}
 	
 	public void setArticleRepository(ArticleRepository articleRepository){

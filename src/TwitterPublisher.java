@@ -1,6 +1,6 @@
 
 public interface TwitterPublisher {
 
-	boolean PublishTweet(String tweet);
+	boolean PublishTweet(Article article);
 
 }
