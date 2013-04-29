@@ -12,19 +12,17 @@ public class PublisherTest {
 		Publisher publisher = new Publisher();
 		
 		ArticleRepository articleRepositoryMock = mock(ArticleRepository.class);
-		UserRepository userRepositoryMock = mock(UserRepository.class);
-		TwitterPublisher twitterPublisherMock = mock(TwitterPublisher.class);
+		UserRepository userRepositoryStub = mock(UserRepository.class);
+		TwitterPublisher twitterPublisherStub = mock(TwitterPublisher.class);
 		
 		Article article = new Article("texto");		
 		User user = new User();		
 		
-		when(userRepositoryMock.isPublisher(user)).thenReturn(true);
-		when(articleRepositoryMock.Publish(article)).thenReturn(true);
-		when(twitterPublisherMock.PublishTweet(article)).thenReturn(true);
+		when(userRepositoryStub.isPublisher(user)).thenReturn(true);
 		
 		publisher.setArticleRepository(articleRepositoryMock);
-		publisher.setUserRepository(userRepositoryMock);
-		publisher.setTwitterPublisher(twitterPublisherMock);
+		publisher.setUserRepository(userRepositoryStub);
+		publisher.setTwitterPublisher(twitterPublisherStub);
 		
 		publisher.Publish(article, user);		
 	

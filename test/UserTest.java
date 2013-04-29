@@ -8,10 +8,10 @@ public class UserTest {
 	@Test
 	public void canPublishValidUser() {
 		
-		UserRepository userRepository = mock(UserRepository.class);
+		UserRepository userRepositoryStub = mock(UserRepository.class);
 		
 		User user = new User();		
-		user.setUserRepository(userRepository);
+		user.setUserRepository(userRepositoryStub);
 		
 		when(user.isPublisher()).thenReturn(true);
 		

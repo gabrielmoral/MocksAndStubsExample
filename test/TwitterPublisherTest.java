@@ -9,11 +9,11 @@ public class TwitterPublisherTest {
 	public void PublishTwitter() {
 		
 		Article article = new Article("text");
-		TwitterPublisher twitterPublisher = mock(TwitterPublisher.class);
+		TwitterPublisher twitterPublisherStub = mock(TwitterPublisher.class);
 				
-		when(twitterPublisher.PublishTweet(article)).thenReturn(true);
+		when(twitterPublisherStub.PublishTweet(article)).thenReturn(true);
 		
-		boolean result = twitterPublisher.PublishTweet(article);
+		boolean result = twitterPublisherStub.PublishTweet(article);
 		
 		assertEquals(true, result);
 	}
